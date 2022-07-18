@@ -1,0 +1,18 @@
+{
+	"database_ddl": {
+		"drivername": "mysql+pymysql",
+		"username": "",
+		"password": "",
+		"host": "",
+		"port": "",
+		"database": ""
+	},
+	"database_dml": {
+		"drivername": "mysql+pymysql",
+		"username": "",
+		"password": "",
+		"host": "",
+		"port": "",
+		"database": ""
+	}
+}
