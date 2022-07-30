@@ -27,6 +27,9 @@ for filename in os.listdir('coleta-youtube/Edit'):
 				if b:
 					a.append(b)
 					b = {}
+		if b:
+			a.append(b)
+			b = {}
 
 		insere_captions(a, os.path.splitext(filename)[0])
 	
