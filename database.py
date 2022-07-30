@@ -71,14 +71,15 @@ def insere_captions(captions, video):
     session = Session()
 
     video = session.query(Video).filter_by(yt_video_id=video).first()
-    video.has_caption = True
+    if (video.has_caption == False):
+        video.has_caption = True
 
-    for caption in captions:
-        if 'line' in caption:
-            session.add(Caption(video_id= video.id, order = caption['minute'], minute = caption['minute'], line = caption['line']))
+        for caption in captions:
+            if 'line' in caption:
+                session.add(Caption(video_id= video.id, order = caption['minute'], minute = caption['minute'], line = caption['line']))
 
-    session.commit()
-    session.close()
+        session.commit()
+        session.close()
 
 
 def get_captions(searched):
