@@ -30,6 +30,7 @@ class Video(Base):
     likeCount = Column(Integer)
     dislikeCount = Column(Integer)
     commentCount = Column(Integer)
+    author = Column(Text)
     # caption
     has_caption = Column(Boolean)
 

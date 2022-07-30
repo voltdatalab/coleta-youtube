@@ -49,6 +49,26 @@ def insere_video(video):
     session.commit()
     session.close()
 
+def update_video(video):
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+
+    db_vid = session.query(Video).filter_by(yt_video_id=video.videoid).first()
+    if db_vid:
+        db_vid.title = video.title
+        db_vid.description = video.description
+        db_vid.created_at = video.published
+        db_vid.viewCount = video.viewcount
+        db_vid.likeCount = video.likes
+        db_vid.dislikeCount = video.dislikes
+        db_vid.author = video.username
+
+
+    session.commit()
+    session.close()
+
+
 def lista_playlists():
     Session = sessionmaker(bind=engine)
     session = Session()
