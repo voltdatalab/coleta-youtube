@@ -7,13 +7,11 @@ from sqlalchemy.engine.url import URL
 from sqlalchemy.orm import Session, sessionmaker
 
 with open("config.json") as jsonfile:
-    db_config = load(jsonfile)['database_dml']
+    db_config = load(jsonfile)['database_volt']
 
-engine = create_engine(URL(db_config['drivername'],
-                           db_config['username'], db_config['password'],
-                           db_config['host'], db_config['port'],
-                           db_config['database']))
-
+engine = create_engine(URL.create(db_config['drivername'], db_config['username'], db_config['password'], db_config['host'],
+                                  db_config['port'], db_config['database']),
+                       connect_args={'options': '-csearch_path={}'.format(db_config['schema'])})
 
 def get_terms():
     Session = sessionmaker(bind=engine)
@@ -34,6 +32,19 @@ def insere_videos(videos):
                 session.add(Video(yt_video_id= video['snippet']['resourceId']['videoId'], title = video['snippet']['title'], created_at = video['snippet']['publishedAt'], description = video['snippet']['description'], has_caption = False))
         except:
             print("error")
+
+    session.commit()
+    session.close()
+
+
+def insere_video(video):
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+
+    db_vid = session.query(Video).filter_by(yt_video_id=video).first()
+    if not db_vid:
+        session.add(Video(yt_video_id=video))
 
     session.commit()
     session.close()
@@ -63,7 +74,8 @@ def insere_captions(captions, video):
     video.has_caption = True
 
     for caption in captions:
-        session.add(Caption(video_id= video.id, order = caption['order'], time = caption['time'], line = caption['line']))
+        if 'line' in caption:
+            session.add(Caption(video_id= video.id, order = caption['minute'], minute = caption['minute'], line = caption['line']))
 
     session.commit()
     session.close()

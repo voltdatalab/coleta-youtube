@@ -1,0 +1,305 @@
+
+00:00
+WEBVTT Kind: captions Language: pt e a partir de agora a gente vai passar a
+palavra aqui para um pro técnico que ele vai fazer considerações sobre
+eventuais oportunidades de melhoria do nosso sistema eletrônico de votação
+então eu encerro aqui a inicial essa inicialmente volto na conclusão para a
+gente fechar o nosso a nossa apresentação Muito obrigado inicialmente E aí a
+senhora senhoras parlamentares é demais autoridades aqui presentes é o público
+que nos assiste casa a intenção minha aqui é explicar e elucidar algumas
+considerações técnicas sobre eventuais oportunidades de melhoria do sistema
+eletrônico de votação e antes de mais nada é bom é ressaltar o
+ministro aqui ele ele tocou nesse assunto mas eu acho importante enfatizar
+
+00:01
+todo o trabalho todo todas as ações da equipe de fiscalização das Forças
+Armadas e está amparado e regulado pela resolução 23 673 do Tribunal Superior
+Eleitoral lá estão previstos os sistemas
+como eles são editados como são as fases
+aqui só para elucidar e para ressaltar é
+a própria resolução ela estabelece o que
+se o que é o ecossistema da urna que são
+todos os softwares todos os equipamentos que cuidam da votação da justificativa
+Eleitoral da apuração e demais aplicativos é óbvio que o sistema como
+um todo tem uma gama grande de aplicativos mas a gente vai focar nesse aqui
+qual é a resolução também ela define determinados termos técnicos e
+determinado vocabulário o que estabelecido como lacração dos sistemas
+Então os sistemas que vão tanto nos computadores como na urna eles vão
+evoluindo programação vai melhorando e em determinado momento é congelado
+
+00:02
+aquela versão do sistema que vai ser usada durante a eleição existe uma
+cerimônia de gravação daquela mídia depois que o
+sistema é compilado e aquela mídia fica no envelope de papel dentro do cofre do
+Tribunal Superior Eleitoral outra definição importante e essa aí é É
+bom ir no detalhe existe lá definição que tem um teste de integridade das
+urnas eletrônicas e tá escrito lá na resolução é um evento de física de
+auditoria de verificação do funcionamento das urnas eletrônicas em
+condições normais de uso está bem Freeza
+a solução o teste público de segurança é um evento que ele Visa aprimorar os
+sistemas eleitorais então vários especialistas eles analisam tanto
+hardware como software e o funcionamento integrado deles e fazem propostas para
+
+00:03
+melhorar o a solução de engenharia do sistema e agora é importante trazer aqui a
+discussão alguns termos de literatura especializada é eu coloquei algumas
+referências aqui vai tá disponível mas o que se entende na comunidade segurança
+da informação como vulnerabilidade é uma falha um defeito ou fraqueza que Visa
+violar é a política de segurança do sistema na questão do código malicioso
+Mauer as pessoas falam vírus né que é o tipo de mal É é um programa instalado é
+usualmente às escondidas e ele tem a intenção de comprometer a
+confidencialidade a integridade EA disponibilidade dos dados aplicação o
+sistema operacional da vítima e também da literatura de referência
+quando se pensa assim nos pilares da segurança de sistemas computacionais
+existe abordagem de considerar as pessoas processos e equipamentos então
+
+00:04
+existem normas de boas práticas em relação a como é o treinamento das
+pessoas que lidam com a concepção com operação e com o que lidam com o sistema
+esse como é que é o controle de acesso Como são feitas as auditorias como é
+feita a rastreabilidade colaboradores externos e internos ou colaboradores que
+eventualmente participaram em alguma fase do processo no passado é em relação
+a processos como são implementados o gerenciamento a governança a
+fiscalização e auditoria auditoria ele é pela lê pela legislação
+literatura de referência auditor ela tem que ser independente tem
+que ser livre de o acionamento da equipe que está fazendo para a equipe que está
+auditando e no equipamento também existem boas práticas de conformidade
+rastreabilidade de fornecedores controle dos fornecedores e
+
+00:05
+na literatura de referência também é definido o que que é uma ameaça interna
+e uma ameaça externa isso tem a ver com perímetro de segurança do
+desenvolvimento do sistema Então as pessoas que têm acesso alguma fase do
+desenvolvimento do sistema elas estão dentro de um perímetro interno e
+consideram uma ameaça interna não necessariamente é um colaborador do
+órgão um funcionário do órgão mas é alguém que participou e teve acesso
+alguma fase de sistema e ameaça externa são aquelas pessoas estão fora do
+perímetro de segurança o dito isso e eu puxei também algumas literaturas de
+referência Então aqui tem uma literatura 2020 quem é possível que o código
+malicioso esteja no chip esteja no água isso são possibilidades reais
+é possível também que o código malicioso faça o equipamento operar de forma
+
+00:06
+diferente Então temos um exemplo aqui de uma montadora de automóveis muito
+conhecida que para o automóvel burlar o sistema de fiscalização lá dos Estados
+Unidos em relação à emissão de gás carbônico ou o automóvel ele sabia que
+estava sobre sobre avaliação e ele operava de uma forma
+diferente quando não estava sob avaliação ele operava de uma forma
+normal então é possível que o código malicioso ele seja é colocado e faça
+esse efeito final aí no equipamento e outra coisa que a gente também puxou
+da legislação da literatura de referência Esses são testes pesquisas
+avaliações sessenta por cento dos problemas em softwares em equipamentos
+CTI em soluções cibernéticas elas provém de ameaças internas elas provém de
+alguma falha alguma alguma pessoa em algum momento ou um equipamento que
+
+00:07
+conseguiu no perímetro interno colocar essa falha então
+e com essa legislação é existem também normas e boas práticas para mitigar
+essas ameaças em relação auditoria existem normas das sai aí sai centro da
+intosai que são utilizadas para auditoria de t.i. são utilizados aqui no
+Brasil pelo próprio TCU existem bom a mais que dão algumas algumas
+assessoramento como se fosse um frame work né para desenvolvimento da solução
+de tem a gente pegou uma Norma aqui do centro de Defesa cibernética do Tam e
+basicamente tem lá uma receita de bolo do que a tentar e no próprio Brasil
+existe as normas brasileiras da ABNT que tratam de como implementar a
+técnica de segurança para o desenvolvimento seguro mas por que que
+eu falei tudo isso e antes de entrar na análise do da
+
+00:08
+votação em papel é importante a gente lembrar aqui no passado o eleitor tem
+uma cedo ele escolhia e ele depositava célula na urna a cédula na urna Na
+verdade o próprio leitor é que checava o que o próprio eleitor é que checava a
+seleção que ele fazia então ele marcava é escolhia lá sua o seu voto e colocava
+depositado numa urna e agora quando a gente analisa o sistema
+eletrônico de votação na versão atual existe um teclado e uma tecla e uma tela
+e o eleitor ele seleciona lá sua opção existe o rato é um software que faz
+aquele processamento e ao término da votação ao término do dia é gerado um
+boletim de urna a questão de engenharia que se coloca é como assegurar que o
+
+00:09
+sistema processa e registra corretamente a ação do eleitor por isso que se faz
+necessário checar tanto o funcionamento Harbor como do software e
+a fazer testes físicos nessa solução é a própria resolução do TSE aponta para
+vários testes né e a gente considera aqui fundamentais o teste de teste
+público de segurança e o teste de integridade como está estabelecido na
+própria Norma do TSE O problema é que o teste público de
+segurança como é que ele é feito aonde colocado em condições de funcionamento
+e tanto com a análise do arder como do software especialistas eles tentam
+verificar tanto as falhas ou vulnerabilidade da solução integrada e
+tentam propor algum tipo de melhoria para a solução de engenharia Então essa
+
+00:10
+ideia do teste público de segurança o teste de integridade
+ele é feito hoje da seguinte forma urnas
+são escolhidas estão a gente tem 577 mil urnas do o coral algumas dessas urnas
+são escolhidas essas urnas são levadas as sedes dos terriers
+na sede do TRE existem funcionários colaboradores que fazem uma votação
+paralela ou seja uma votação em papel e uma votação utilizando a urna com uma
+câmera que filma a ação do usuário lá na urna e ao término dessa votação é
+desculpa passei aqui mais ao término dessa votação as cédulas são com feridas
+com o boletim de urna ou seja Verifica que a urna está operando corretamente e
+agora em relação às ameaças até o momento com a lei com a documentação
+entregue com a informação que a gente tem a nossa equipe estudou problema e
+
+00:11
+apontou algumas ameaças que ainda persistem tanto na urna como no sistema
+em relação a urna por exemplo a gente nota que o TSE o longo dos anos ele vem
+implementando muitas soluções de arquitetura de processamento de soft a
+gente reconhece que houve um avanço incrível na segurança da urna eletrônica
+e do sistema eletrônico de votação só que essas essas contribuições as
+evolução ela foi feito muito baseado no ameaça externa ao perímetro de segurança
+de desenvolvimento então em relação essa ameaça externa a gente considera que
+assim um grande nível de proteção a urna
+não se conecta a internet não tem outras ligações realmente para uma uma a
+unidade externa é muito difícil e no que tange a ameaça interna ou a
+
+00:12
+vulnerabilidade interna até o momento a gente ainda não tem disponível a
+documentação que nos leve a formar uma opinião conclusiva que a solução ela é
+segura em relação a ameaça interna e é na verdade como ameaça como
+vulnerabilidade é possível com código malicioso dado ameaça interna como eu
+tinha falado que é um grande é nos sistemas informatizados hoje mais de
+sessenta por cento acontece por ameaça interna é possível com código malicioso
+tem assim eu acho que travou um código malicioso tem assim sido inserido na
+urna e fique lá latente esperando algum tipo de acionamento
+Oi e da nossa análise esse código malicioso ele pode sim é funcionar para
+fazer a urna furtar-se ao teste A exemplo que eu falei da grande montadora
+que o carro sabia que estava sobre a avaliação é possível também que alguns
+
+00:13
+algumas considerações é esse esse código malicioso faça é programado para ser
+acionado em condições específicas a primeira delas é a entrada da biometria
+real porque o teste feito no TRE o teste integridade na versão atual ele é feito
+na sede do TRE onde não a biometria Esse é o fluxo ou ritmo de votação dos
+registros na urna realizado na urna de teste ele é diferente de uma urna real
+ou de uma urna em condições reais de operação
+não é possível que tem um código de acionamento de tecla feito pelo eleitor
+um eleitor cooptado é possível que a urna saiba que o horário de votação é
+diferente do horário normal e o código malicioso seja acionado e é possível
+também é que essa esse código malicioso esteja instalado na zona de reservas até
+o momento a gente percebe que as urnas reservas não entram no pão no hall de
+
+00:14
+urna e selecionadas para fazer o teste integridade e pelos dados do próprio TSE
+cerca de dez porcento das zonas estão trocadas é como uma das reservas e pode
+ter outro tipo de acionamento E aí e em relação a ameaças ao sistema
+lembrando o sistema foi compilado lacrado e guardado no cofre lá do TSE
+esses programas depois eles são verificados várias verificações
+conduzidos pelos técnicos e depois desse programa ele é distribuído para os
+terriers e para o Brasil todo para todas as urnas um código malicioso que esteja
+dormente no programa Matriz Ele Pode sim
+ser transmitido e ser instalado em todas as urnas então a gente percebe que Como
+Um item a mais uma fase a mais de verificação Deveria assim antes de
+
+00:15
+transmitir verificar o funcionamento daquele código que está lacrado como uma
+etapa mais de verificação Oi e aí é com a possibilidade de ter
+pela referência mostrado um algum código malicioso causado por um agente interno
+seja errado é seja em software a gente propõe uma pequena alteração no que está
+estabelecido e sendo coerente com a própria resolução do TSE então a
+resolução do TSE lembrando o que eu falei atrás ela prever o teste das urnas
+em condições normais de uso Então como é que seria um teste desse urnas seriam
+escolhidas da mesma forma que o próprio é que a própria resolução estabelece só
+que ao invés de levar essa urna para sede do TRE essa una seria colocado em
+paralelo na seção eleitoral onde você teria os eleitores com a biometria de
+forma Tranquilo então eu Heitor Faria sua votação e seria perguntado se ele
+
+00:16
+gostaria de contribuir para testar a urna e ao fazer isso ele geraria um
+fluxo de registro na urna teste similar a urna original a e após isso os
+os servidores farão a votação em cédula de papel
+e depois dessa votação em cédula de papel ela seria conferida com o boletim
+de urna com essa abordagem aqui pela escolha aleatória das urnas a escolha a
+chamada a zonas escolhidas para o teste modificaria pequenos procedimentos no
+que está estabelecido mas traria um grau
+de segurança um grau de certeza maior em relação a possível ameaça tanto do
+código interno como ameaça de hard on Tá bom agora eu termino minha
+participação eu sei que a apresentação foi muito simples mas eu vou ficar aqui
+
+00:17
+disponível para esclarecer algumas coisas é porque eu gostaria de ressaltar
+que o trabalho da equipe de fiscalização das Forças Armadas como uma das equipes
+das diversas entidade é convidadas ele tem se pautado pelo que está previsto na
+resolução do TSE nós estamos estudando problema
+analisando vulnerabilidades e vendo como nas oito fases a gente pode contribuir
+para o processo eleitoral Muito obrigado como
+conseguir o seu presidente é o que eu esqueci de me referir a respeito de
+alguns dados do Coronel Nogueira Marcelo Nogueira de Souza ele é doutorado em
+processamento de sinais da Universidade de Tecnologia em homenagem ao Alemanha
+mestrado engenharia de micro-ondas na universidade de Tecnologia de Munique
+Alemanha e mestrado em engenharia elétrica na UnB
+
+00:18
+formado em engenharia de comunicações pelo Instituto Militar de Engenharia e
+também é oriundo do curso de comunicações da Academia Militar das
+Agulhas Negras ele chefiou a área de comunicações estratégicas de Defesa
+cibernética do Comando Militar da Amazônia e gerenciou diversos projetos
+na área de comando e controle de guerra eletrônica do exército brasileiro
+eu estou já na conclusão eu mais uma vez eu volto a atuação os três pilares da
+atuação das Forças Armadas como comissão de Transparência eleitoral e entidade
+fiscalizadora legalmente instituído pelo TSE um
+trabalho técnico senhores viram aqui o nível dessa apresentação técnica do
+nosso Engenheiro isso aqui é um resumo loo-kee uma grande apresentação que tem
+
+00:19
+muito mais dados técnicos de possibilidade de acontecer quando se
+trabalha com sistemas e e e nunca esquecer que fomos
+estados convidados EA partir do momento e nas Forças Armadas quando a gente
+recebe uma missão a gente chama assim a dedicação é total EA o cumprimento da
+missão que a integrar o Tribunal Superior Eleitoral as condições de
+melhoria da Transparência da segurança e da auditoria isso a gente vai até o fim
+e é isso que tem sido feito não tem viés político gente
+não tem dúvida não tem aqui colocarem em xeque o entulho a quem quer que seja
+e até Carlos é Tecnicamente de posse dos dados
+apresentar um trabalho e aí a decisão não é aceitação não cabe a gente cabe ao
+
+00:20
+Tribunal Superior Eleitoral logicamente que tem suas nuances de
+logística de capacidade de recursos de tudo mas é não poderíamos deixar de
+apresentar esse trabalho como a gente está buscando apresentar
+e ainda como itens da conclusão não há sistema informatizado imune a ameaças
+internas e externas tá aqui um técnico que me orientou os programas e as
+máquinas sempre necessitam de aperfeiçoamento inspecionados e auditados e a
+verificação da integridade do sistema deve ser feito em condições mais próximo
+possível da realidade e eu reitero as três propostas que nós
+entendemos como essenciais E aí consultamos a a que possamos conversar
+sobre essas propostas realizar o teste de integridade com
+
+00:21
+biometria nas mesmas condições da eleição na seção eleitoral
+realizar o teste público de segurança nas urnas 2020 e
+quem não faz não deve ser tem ao dita tão auditoria independente E aí é o
+próprio terceiro e amarra muito bem na sua documentação em que os partidos
+políticos empresas contratadas por partidos políticos têm essa incumbência
+bom então é incentivar e tornar efetivo essa essa auditoria independente
+Eu já concluído eu fui buscar na no Tribunal Superior Eleitoral e fazer a
+ligação como nós estamos alinhados com o PS quando tratamos de Transparência de
+segurança de auditoria Essa é a visão do TSE compilei do site do TSE em que ele
+
+00:22
+fala a visão de futuro transparente ele fala transparência legitimidade
+inovação inovação e ainda no aspecto de valores vejam
+atuação das nossas forças armadas alinhada aos valores do TSE transparência
+melhoria contínua e alianças estratégicas a democracia
+e não que se escuta muito me deixa bastante chateado chateado como Ministro
+como um membro das Forças Armadas é por vezes ouve lê
+ataque à democracia como se nós tivéssemos atacando a democracia
+mostrando um produto acabado de algo interessante para o sistema eleitoral
+
+00:23
+brasileiro que essa parte técnica bom e olha a missão do TSE a missão ela
+fala em legitimidade do processo eleitoral fortalecer a democracia
+tudo a ver com que a gente quer também muito alinhado ao Nosso a nossa corte
+eleitoral e com segurança com transparência e com
+auditoria não tenha dúvida que a gente tem confiabilidade credibilidade
+Tranquilidade e paz social e é o que a gente deseja
+nesse momento paz social um momento muito sensível uma polarização muito
+grande e que todos que temos que estar juntos e unidos
+
+00:24
+para que tenhamos essa transparência essa confiabilidade essa tranquilidade
+para que tenhamos é ao final é uma eleição tranquila
+e fortalecendo conheço a nossa calejada forte a nossa democracia Brasil um país
+democrático e e eu queria mais uma vez agradecer me
+perdoa em seu passeio tempo Senador é porque realmente o assunto é muito
+palpitante

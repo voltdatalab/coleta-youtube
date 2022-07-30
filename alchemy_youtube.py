@@ -41,8 +41,8 @@ class Caption(Base):
     id = Column(Integer, primary_key=True)
     video_id = Column(Integer, ForeignKey("videos.id"), nullable="False")
     order = Column(Integer)
-    time = Column(Text(64))
-    line = Column(Text(128))
+    minute = Column(Integer)
+    line = Column(Text)
     #controle de busca
     was_searched = Column(Boolean, default=False)
     has_terms = Column(Boolean)

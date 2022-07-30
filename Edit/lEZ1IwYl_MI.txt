@@ -1,0 +1,141 @@
+
+00:00
+WEBVTT Kind: captions Language: pt e a comunidade de desenvolvimento de
+software o creme Anna é muito forte e tem apoiado as forças o cranianas nessa
+guerra e essa visão libertária só fonte de informações descentralizadas e
+distribuídas o jornalista polonês marcin verbal escreveu recentemente um artigo
+no importante jornal polonês sobre a iniciativa Delta ao crânio tem uma
+grande comunidade de desenvolvedores de software muitos inclusive trabalhando
+para grandes empresas europeias Vinte por cento das maiores empresas da Forbes
+usam software ucraniano com a invasão da Ucrânia pelos Russos muitos
+desenvolvedores se colocaram à disposição das Forças Armadas ou
+cranianas alguns deles tiveram suas casas cidades destruídas pelos Russos
+uma grande quantidade morava em bucha irpin cidades na grande 15 que eram
+polos de tecnologia e foram totalmente destruídas pelos Russos então cerca de
+
+00:01
+mil desenvolvedores se ofereceram Para apoiar as forças armadas o cranianas
+estas organizaram então a chamada iniciativa Delta um conjunto de reuniões
+em que o pessoal da frente de batalha apresenta o que gostariam que fosse
+resolvidos por software ou problemas que sentem o uso de aplicativos eletrônicos
+e os desenvolvedores apontam possíveis soluções que se autorizadas geram uma
+unidade de trabalho com os desenvolvedores trabalhando junto com o
+pessoal militar para desenvolver a solução alguns dos melhores casos de uso
+dessa iniciativa Delta são referentes a drones drones tomar uma relevância
+enorme nessa batalha e provavelmente se tornaram cada vez mais relevantes no
+futuro eles podem ser usados para vários propósitos mesmo drones comerciais
+comuns na são úteis para permitir Patrulha aérea simplesmente ver onde
+está o inimigo Onde estão suas armas Onde estão os postos de comando já é uma
+
+00:02
+vantagem enorme Mas pode chegar mais do que isso direcionar tiro de artilharia é
+muito útil ter um olho no céu para ver o
+que está acontecendo nas Linhas Inimigas
+Além disso os drones também podem atacar levar pequenas Bombas ou no caso e os
+Kamikazes o Drone Esse é uma bomba daí Existem várias opções esses drones
+militares como o bayraktar bt2e outros podem levar uma grande quantidade de
+mísseis e foguetes e causar danos significativos Mas mesmo drones civis
+modificados podem levar alguma carga como granadas manuais uma granada dessa
+não causa tanto dano quanto uma munição de porte maior pode no máximo matar
+pessoas próximas De Onde Caiu se tiver muita sorte pode explodir outras
+munições no local Mas isso não é garantido embora o dano seja abaixo esse
+arranjo acaba sendo útil porque é de baixíssimo custo em relação aos drones
+militares um drone civil com quatro cinco granadas manuais vai custar uns 20
+
+00:03
+mil dólares enquanto um bar aqui tá que é considerado um drone militar barato
+custa cinco milhões de dólares só o Drone a munição para ele também tem um
+custo alto ou seja você pode a 150 drones menores ao invés do Drone maior a
+capacidade de causar danos começa a favorecer os menores com um monte de
+drones desses na linha de frente o estrago acaba sendo considerado no
+mínimo leva os soldados inimigos a temerem por sua vida o tempo todo posto
+que é praticamente impossível prever a chegada de um drone some a isso o fato
+de que as sanções impedem a Rússia de adquire fabricar novos drones enquanto a
+Ucrânia não tem essa alimentação à medida que a guerra avança com Drone
+sendo derrubados de ambos os lados isso leva a uma vantagem crescente para os
+ucranianos nesse tipo de guerra Lógico os russos sabem na importância dos
+drones e tem muitos drones deles mesmo Mas recentemente andaram negociando com
+
+00:04
+o Irã o fornecimento de mais drones Podendo dar a entender que a quantidade
+está se mostrando perigosamente baixa mas existem alguns desafios primeiro é a
+identificação das posições russas camuflagem é algo normal na guerra todo
+o usa camuflagem para esconder os soldados os tanques Exposições
+trincheiras enfim o inimigo for incapaz de ver o alvo ele não terá como atingir
+esse algo que os drones vão à distância significativa na altura justamente para
+evitar serem vistos pelo inimigo então é difícil mesmo para um soldado treinado
+ver os elementos camuflados do inimigo Esse é o primeiro passo para qualquer
+tipo de ataque seja o Drone jogar a granada seja direcionar artilharia
+quando esse tema foi levantado em uma reunião da iniciativa Delta 2
+desenvolvedores apontaram uma possível solução eles trabalhavam com uma empresa
+que tava fazendo o reconhecimento de produtos em imagens de câmeras para
+reconhecer os produtos que podem estar parcialmente ocultos obscurecidas com
+uma luz diferentes condições não para de visualização eles trabalharam em um
+
+00:05
+modelo de inteligência artificial para fazer esse reconhecimento modelo é
+treinado com imagens conhecidos agora no
+caso de tanques e outros dispositivos de guerra camuflados e a parte o que pode
+ser usado para contar com muito mais facilidade do que uma pessoa a
+existência de objetos militares camuflados na visão do Drone O problema
+foi resolvido em um fim de semana e já está sendo usado amplamente na frente de
+batalha é muito mais simples a identificação com o uso da Inteligência
+Artificial pois a imagem do Drone já aponta possíveis objetos com a
+probabilidade de sem alvos e humano precisa apenas confirmar depois disso
+podem ser usadas as granadas do próprio Drone ou Um oficial pode requisitar fogo
+de artilharia naquela posição as coordenadas do alvo já são identificadas
+pelo sistema automaticamente mas não parou aí uma das armas que têm sido
+usadas pelos Russos e também pelos ucranianos são os embaralhador is de
+
+00:06
+sinal para Drone é uma das formas mais simples derrubar um drone tipicamente
+drones usam GPS para se guiar e se comunicam via rádio com operador que
+controla o Drone armas potentes podem direcionar ondas de rádio muito a
+direção do Drone de forma que ele não consiga mais identificar o sinal do GPS
+portanto não tenha mais a localização e também não recebam mais controle do
+operador isso tipicamente derruba o Drone para evitar esse tipo de ataque
+eles criaram um drone totalmente isolado para as ondas eletromagnéticas não
+interferirem nos circuitos internos e composição e como mecanismo de
+posicionamento Independente de GPS Eles não falam o que usaram como alternativa
+para não entregar o segredo mas o Drone consegue se orientar sem o GPS Assim
+como as armas magnéticas o Drone fica apenas sem comando do operador e nessa
+situação ele entra em modo automatizado para retornar à base o Drone que seria
+perdido de outra forma retorna com segurança inclusive com as imagens da
+
+00:07
+região armazenadas Esses são apenas alguns dos exemplos a iniciativa muitos
+outros projetos desse tipo têm sido feitos envolvendo drones e outros
+sistemas militares também por exemplo o principal Drone room o Holandês já
+tiveram várias unidades capturados pelos
+ucranianos e tem grupo estudando a fundo esse Drone para identificar meio de
+neutralizar a sua ação no final o que fica claro nessa guerra é que além de
+ter um lado claramente certo e um lado claramente errado é que também é uma
+guerra entre uma entidade centralizador E monolítica extremamente preparado e
+com recursos ambulante mais totalmente rígida e centralizada versus uma
+estrutura descentralizada evolutiva desburocratizada em que a
+Inovação EA mudança acontece em tempo todo a Rússia sempre teve muito da União
+Soviética não apenas na pretensão expansionista e imperialista a ponto de
+invadir um país sem absolutamente nenhuma justificativa válida mas também
+
+00:08
+a centralização e estrutura extremamente
+burocrática e corrupta do governo apesar de ter um Arsenal enorme a Rússia peca
+em adaptabilidade em logística e responder às mudanças é de batalha na
+Ucrânia em 2014 estava em situação ainda pior que a Rússia no ponto de vista
+militar tinha a mesma rigidez a mesma visão sobre ética e pior o mesmo acionar
+o velho e as mesmas práticas burocráticas e corruptas mas desde então
+o país buscou se inspirar nos modelos militares ocidentais E com isso veio
+equipamento mais moderno técnicas mais flexíveis adaptabilidade abertura para
+inovação e muito mais descentralização e Tecnologia do ponto de vista ético e do
+ponto de vista tecnológico não tem como a Ucrânia perder essa guerra
+obrigado pela audiência Esse vídeo foi um oferecimento de ar mata web.com
+Cláudio e serviços de data center sem por cento de compromisso com a
+
+00:09
+satisfação e privacidade dos clientes aceitamos Bitcoin veja o link na
+descrição do vídeo se você gostou desse vídeo clique no like compartilhe em suas
+redes sociais se inscreva no canal para nos ajudar clicando no botão vermelho
+quem quiser ser avisado novos vídeos clique no Sininho ao lado se você quiser
+comprar camisas e outros itens do visão libertária veja nossos itens no site
+pimenta no Café pimenta no Café. Com.br/visão libertária tudo junto sem
+acento ou clique no link da descrição é até
