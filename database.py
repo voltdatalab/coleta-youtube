@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.engine.url import URL
 from sqlalchemy.orm import Session, sessionmaker
 
-with open("config.json") as jsonfile:
+with open("coleta-youtube/config.json") as jsonfile:
     db_config = load(jsonfile)['database_volt']
 
 engine = create_engine(URL.create(db_config['drivername'], db_config['username'], db_config['password'], db_config['host'],

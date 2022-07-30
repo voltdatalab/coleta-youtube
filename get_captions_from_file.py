@@ -4,8 +4,8 @@ from database import insere_captions
 from database import insere_video
 
 
-for filename in os.listdir('Edit'):
-	with open(os.path.join('Edit', filename), 'r', encoding="utf8") as f:
+for filename in os.listdir('coleta-youtube/Edit'):
+	with open(os.path.join('coleta-youtube/Edit', filename), 'r', encoding="utf8") as f:
 		
 		insere_video(filename.split('.')[0])
 
