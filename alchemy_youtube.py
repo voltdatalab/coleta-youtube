@@ -62,4 +62,5 @@ class Term(Base):
     id = Column(Integer, primary_key=True)
     theme = Column(Text)
     term = Column(Text)
+    spellings = Column(Text)
     positive = Column(Boolean)
