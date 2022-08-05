@@ -44,7 +44,7 @@ def insere_video(video):
 
     db_vid = session.query(Video).filter_by(yt_video_id=video).first()
     if not db_vid:
-        session.add(Video(yt_video_id=video))
+        session.add(Video(yt_video_id=video, has_caption=False))
 
     session.commit()
     session.close()
