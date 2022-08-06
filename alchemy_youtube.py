@@ -33,6 +33,9 @@ class Video(Base):
     author = Column(Text)
     # caption
     has_caption = Column(Boolean)
+    # twitter management
+    has_terms = Column(Boolean)
+    bot_tweeted = Column(Boolean)
 
     def __repr__(self):
         return f'Video {self.twitter_id}'

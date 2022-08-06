@@ -143,7 +143,7 @@ def get_video_to_tweet():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    db_video = session.query(Video).filter(Video.has_terms == True).filter(Video.bot_tweeted == False).first()
+    db_video = session.query(Video).filter(Video.has_terms == True).filter(Video.bot_tweeted != True).first()
     db_captions = session.query(Caption).filter(Caption.video_id==db_video.id).filter(Caption.has_terms == True).all()
     
     return db_video, db_captions
