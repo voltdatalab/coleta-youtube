@@ -128,9 +128,22 @@ def update_caption_term(caption, term):
     session = Session()
 
     db_caption = session.query(Caption).filter(Caption.id==caption.id).first()    
+    db_video = session.query(Video).filter(Video.id == Caption.video_id).first()
+    
     db_caption.has_terms = True
+    db_video.has_terms = True
 
     session.add(TermCaption(caption_id = caption.id, term_id = term.id))
 
     session.commit()
     session.close()
+
+
+def get_video_to_tweet():
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    db_video = session.query(Video).filter(Video.has_terms == True).filter(Video.bot_tweeted == False).first()
+    db_captions = session.query(Caption).filter(Caption.video_id==db_video.id).filter(Caption.has_terms == True).all()
+    
+    return db_video, db_captions
