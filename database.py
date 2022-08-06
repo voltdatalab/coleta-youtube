@@ -109,7 +109,7 @@ def get_captions(searched):
     if (searched):
         return session.query(Caption).all()
     else:
-        return session.query(Caption).filter(Caption.was_searched == False).limit(1000).all()
+        return session.query(Caption).filter(Caption.was_searched == False).all()
 
 
 def update_caption(caption):
