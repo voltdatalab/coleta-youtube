@@ -85,7 +85,7 @@ def lista_videos(captionless, days):
         return session.query(Video).all()
     else:
         return session.query(Video).filter(Video.has_caption.is_(False)).filter(
-        Video.creted_at > datetime.date.today() - datetime.timedelta(days=days)).all()
+            Video.creted_at > datetime.date.today() - datetime.timedelta(days=days)).all()
 
 
 def insere_captions(captions, video):
@@ -149,15 +149,18 @@ def get_video_to_tweet():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    db_video = session.query(Video).filter(Video.has_terms.is_(
-        True)).filter(Video.bot_tweeted.is_not(True)).first()
-    
-    db_numbers = session.query(Term.term, func.count(TermCaption.id)).filter(Caption.id == TermCaption.caption_id)\
-        .filter(Term.id == TermCaption.term_id).filter(Caption.video_id == db_video.id)\
-        .filter(Caption.has_terms.is_(True)).group_by(Term.term).order_by(func.count(TermCaption.id).desc()).all()
-    
-    db_captions = session.query(Caption, TermCaption, Term).filter(Caption.id == TermCaption.caption_id)\
-        .filter(Term.id == TermCaption.term_id).filter(Caption.video_id == db_video.id)\
-        .filter(Caption.has_terms.is_(True)).order_by(Caption.minute).all()
+    db_video = session.query(Video).filter(Video.has_terms.is_(True)).filter(Video.bot_tweeted.is_not(True)).filter(
+        Video.created_at > datetime.date.today() - datetime.timedelta(days=1)).order_by(Video.viewCount.desc()).first()
+    if (db_video):
+        db_numbers = session.query(Term.term, func.count(TermCaption.id)).filter(Caption.id == TermCaption.caption_id)\
+            .filter(Term.id == TermCaption.term_id).filter(Caption.video_id == db_video.id)\
+            .filter(Caption.has_terms.is_(True)).group_by(Term.term).order_by(func.count(TermCaption.id).desc()).all()
 
-    return db_video, db_captions, db_numbers
+        db_captions = session.query(Caption, TermCaption, Term).filter(Caption.id == TermCaption.caption_id)\
+            .filter(Term.id == TermCaption.term_id).filter(Caption.video_id == db_video.id)\
+            .filter(Caption.has_terms.is_(True)).order_by(Caption.minute).all()
+
+        return db_video, db_captions, db_numbers
+    
+    else:
+        return None, None, None
