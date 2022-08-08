@@ -134,7 +134,7 @@ def update_caption_term(caption, term):
     db_caption = session.query(Caption).filter(
         Caption.id == caption.id).first()
     db_video = session.query(Video).filter(
-        Video.id == Caption.video_id).first()
+        Video.id == caption.video_id).first()
 
     db_caption.has_terms = True
     db_video.has_terms = True
