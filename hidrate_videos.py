@@ -8,12 +8,10 @@ with open("coleta-youtube/config.json") as jsonfile:
 
 pafy.set_api_key(config["key"])
 
-videos = lista_videos(False)
+videos = lista_videos(False, 2)
 for video in videos:
 	try:
 		source = pafy.new(video.yt_video_id, gdata=True)
-		print(source)
-
 		update_video(source)
 	except:
 		print("removido: " + video.yt_video_id)
