@@ -164,3 +164,15 @@ def get_video_to_tweet():
     
     else:
         return None, None, None
+
+
+def mark_published(video):
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    db_vid = session.query(Video).filter_by(id=video.id).first()
+    if db_vid:
+        db_vid.bot_tweeted = True
+
+    session.commit()
+    session.close()

@@ -38,7 +38,7 @@ class Video(Base):
     bot_tweeted = Column(Boolean)
 
     def __repr__(self):
-        return f'Video {self.twitter_id}'
+        return f'Video {self.id}'
 
 class Caption(Base):
     __tablename__ = 'captions'
