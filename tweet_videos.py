@@ -48,9 +48,12 @@ if __name__ == '__main__':
         old_string = ""
         for caption in captions:
             print("```")
-            string = "O termo \"" + caption.Term.term + "\" foi mencionado no vídeo em: {:02}h{:02}m".format(int(caption.Caption.minute/60), caption.Caption.minute%60)
+            if (len(caption.terms.split(',')) > 1):
+                string = "Os termos \"" + caption.terms + "\" foram mencionado no vídeo em: {:02}h{:02}m".format(int(caption.minute/60), caption.minute%60)
+            else:
+                string = "O termo \"" + caption.terms + "\" foi mencionado no vídeo em: {:02}h{:02}m".format(int(caption.minute/60), caption.minute%60)
             string = string + "\n\n"
-            string = string + "https://www.youtube.com/watch?v=" + video.yt_video_id + "&t=" + str(caption.Caption.minute * 60)
+            string = string + "https://www.youtube.com/watch?v=" + video.yt_video_id + "&t=" + str(caption.minute * 60)
             if string != old_string:
                 last_status = twitter.simple_tweet(string, last_status)
                 old_string = string

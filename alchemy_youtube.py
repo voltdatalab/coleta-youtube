@@ -67,3 +67,11 @@ class Term(Base):
     term = Column(Text)
     spellings = Column(Text)
     positive = Column(Boolean)
+
+class TermsInVideo(Base):
+    __tablename__ = 'terms_in_video'
+
+    id = Column(Integer, primary_key=True)
+    video_id = Column(Integer, ForeignKey("videos.id"), nullable="False")
+    minute = Column(Integer)
+    terms = Column(Text)

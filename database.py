@@ -1,4 +1,4 @@
-from alchemy_youtube import Video, TermCaption, Playlist, Caption, Term
+from alchemy_youtube import Video, TermCaption, Playlist, Caption, Term, TermsInVideo
 from json import load
 import datetime
 
@@ -60,11 +60,11 @@ def update_video(video):
     if db_vid:
         db_vid.title = video.title
         db_vid.description = video.description
-        db_vid.created_at = video.published
+        # db_vid.created_at = video.published
         db_vid.viewCount = video.viewcount
-        db_vid.likeCount = video.likes
-        db_vid.dislikeCount = video.dislikes
-        db_vid.author = video.username
+        # db_vid.likeCount = video.likes
+        # db_vid.dislikeCount = video.dislikes
+        # db_vid.author = video.username
 
     session.commit()
     session.close()
@@ -156,9 +156,8 @@ def get_video_to_tweet():
             .filter(Term.id == TermCaption.term_id).filter(Caption.video_id == db_video.id)\
             .filter(Caption.has_terms.is_(True)).group_by(Term.term).order_by(func.count(TermCaption.id).desc()).all()
 
-        db_captions = session.query(Caption, TermCaption, Term).filter(Caption.id == TermCaption.caption_id)\
-            .filter(Term.id == TermCaption.term_id).filter(Caption.video_id == db_video.id)\
-            .filter(Caption.has_terms.is_(True)).order_by(Caption.minute).all()
+        db_captions = session.query(TermsInVideo).filter(TermsInVideo.video_id == db_video.id)\
+            .order_by(TermsInVideo.minute).all()
 
         return db_video, db_captions, db_numbers
     
