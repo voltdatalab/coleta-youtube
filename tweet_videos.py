@@ -11,9 +11,9 @@ if __name__ == '__main__':
         try:
             source = pafy.new(video.yt_video_id, gdata=True)
             update_video(source)
-        except:
+        except Exception as e:
             print("removido: " + video.yt_video_id)
-            print()
+            print(e)
 
         print("```")
         string = "🔍Encontramos {:,} termos que geralmente são usados em contexto de desinformação no vídeo:\n\n\"{}\", do canal: \"{}\".👇".format(len(numbers), video.title, video.author)
