@@ -149,7 +149,7 @@ def get_video_to_tweet():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    db_video = session.query(Video).filter(Video.has_terms.is_(True)).filter(Video.bot_tweeted.is_not(True)).filter(
+    db_video = session.query(Video).filter(Video.title.is_not(None)).filter(Video.viewCount.is_not(None)).filter(Video.has_terms.is_(True)).filter(Video.bot_tweeted.is_not(True)).filter(
         Video.created_at > datetime.date.today() - datetime.timedelta(days=1)).order_by(Video.viewCount.desc()).first()
     if (db_video):
         db_numbers = session.query(Term.term, func.count(TermCaption.id)).filter(Caption.id == TermCaption.caption_id)\
