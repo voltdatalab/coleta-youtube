@@ -22,6 +22,7 @@ for video in videos:
 		source = api.get_video_by_id(video_id=video.yt_video_id)
 		update_video(source)
 		
-	except:
+	except Exception as e:
+		print(e)
 		print("removido: " + video.yt_video_id) 
 		print()
