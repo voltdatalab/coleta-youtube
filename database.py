@@ -82,7 +82,7 @@ def lista_videos(captionless, days):
     session = Session()
 
     if (not captionless):
-        return session.query(Video).all()
+        return session.query(Video).order_by(desc(Video.id)).all()
     else:
         return session.query(Video).filter(Video.has_caption.is_(False)).filter(
             Video.creted_at > datetime.date.today() - datetime.timedelta(days=days)).all()
