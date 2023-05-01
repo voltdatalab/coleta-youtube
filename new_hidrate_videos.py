@@ -18,9 +18,10 @@ for video in videos:
 	
 	try:
 		# source = pafy.new(video.yt_video_id, gdata=True)
+		i += 1
 		source = api.get_video_by_id(video_id=video.yt_video_id)
 		update_video(source)
-		i += 1
+		
 	except:
 		print("removido: " + video.yt_video_id) 
 		print()
