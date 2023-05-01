@@ -61,7 +61,7 @@ def update_video(video):
         db_vid.title = video.items[0].snippet.title
         db_vid.description = video.items[0].snippet.description
         # db_vid.created_at = video.published
-        db_vid.viewCount = video.statistics.viewCount
+        db_vid.viewCount = video.items[0].statistics.viewCount
         # db_vid.likeCount = video.likes
         # db_vid.dislikeCount = video.dislikes
         # db_vid.author = video.username
