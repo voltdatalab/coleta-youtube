@@ -56,7 +56,7 @@ def update_video(video):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    db_vid = session.query(Video).filter_by(yt_video_id=video.videoid).first()
+    db_vid = session.query(Video).filter_by(yt_video_id=video.items[0].id).first()
     if db_vid:
         db_vid.title = video.items[0].snippet.title
         db_vid.description = video.items[0].snippet.description
