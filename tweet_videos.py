@@ -2,14 +2,15 @@ if __name__ == '__main__':
     from database import get_video_to_tweet
     from database import update_video
     from database import mark_published
-    import pafy
+    from pyyoutube import Api
     import twitter
 
+    print('Iniciando script de tweet')
     video, captions, numbers = get_video_to_tweet()
     #atualiza informações do vídeo
     if video:
         try:
-            source = pafy.new(video.yt_video_id, gdata=True)
+            source = api.get_video_by_id(video_id=video.yt_video_id)
             update_video(source)
         except Exception as e:
             print("removido: " + video.yt_video_id)
