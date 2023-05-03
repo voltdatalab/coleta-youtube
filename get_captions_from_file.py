@@ -33,7 +33,8 @@ for folder in os.listdir('coleta-youtube/transcripts/'):
 			if b:
 				a.append(b)
 				b = {}
-
+				
+			print(filename.split('.')[0])
 			insere_captions(a, filename.split('.')[0])
 		
 		# os.remove(os.path.join('captions', filename))
